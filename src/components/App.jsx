@@ -2,7 +2,7 @@
 // import { Box } from "./Box";
 
 import { Component } from 'react';
-import { Form } from './Form/Form';
+import { InputForm } from './Form/Form';
 
 export class App extends Component {
   state = {
@@ -11,17 +11,27 @@ export class App extends Component {
     number: '',
   };
 
+
+// addContact = text => {
+//   console.log(text);
+// }
+
+
  
-handlerFormSubmit = data => {
-  console.log(data);
-}
+// handlerFormSubmit = data => {
+//   console.log(data);
+// }
  
 
   render() {
     return (
       <>
-        <h1>Phonebook</h1>
-        <Form onSubmit={this.handlerFormSubmit} />
+      <InputForm />
+        {/* <h1>Phonebook</h1>
+        <Form 
+         onSubmit={this.handlerFormSubmit}
+         
+         /> */}
       </>
     );
   }
