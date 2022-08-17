@@ -1,5 +1,5 @@
 import { Box } from 'components/Box';
-import { ContactItem } from '../ContactItem.js/ContactItem';
+import { ContactItem } from '../ContactItem/ContactItem';
 import PropTypes from 'prop-types';
 
 export const ContactList = ({ contacts, onRemoveClick }) => {
@@ -27,5 +27,5 @@ ContactList.propTypes = {
       number: PropTypes.string.isRequired,
     })
   ),
-  onRemoveClick: PropTypes.func.isRequired,
+  // onRemoveClick: PropTypes.func.isRequired,
 };

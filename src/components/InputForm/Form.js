@@ -4,7 +4,7 @@ import * as yup from 'yup';
 // import PropTypes from 'p rop-types'
 
 // import { Component } from 'react';
-import { FormName } from './Form.styyled';
+// import { FormName } from './Form.styled';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -31,7 +31,7 @@ export const InputForm = () => {
       <Form autoComplete="off">
         <label htmlFor="name">
           Name
-          <FormName
+          <Field
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
