@@ -25,6 +25,8 @@ export const theme = {
     lightgold: '#dfc49d',
     warmneutral: '#f2f0eb',
     housegreen: '#1E3932',
+    powderblue: '#B0E0E6',
+    silver: '#C0C0C0',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {

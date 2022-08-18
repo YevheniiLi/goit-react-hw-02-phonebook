@@ -1,24 +1,21 @@
-import { ButtonForm , LabelStyle} from './Form.styyled';
+import { ButtonForm, LabelStyle } from './ContactForm.styyled';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 
+import PropTypes from 'prop-types';
 
-// import PropTypes from 'p rop-types'
 
-
-// import { FormName } from './Form.styled';
 
 const schema = yup.object().shape({
   name: yup.string().required(),
-  number: yup.number().required(),
+  number: yup.number().min(4).required(),
 });
 
-export const InputForm = ({ onSubmit }) => {
+export const ContactForm = ({ onSubmit }) => {
   const initialValues = {
     name: '',
     number: '',
   };
-
 
   return (
     <>
@@ -36,11 +33,10 @@ export const InputForm = ({ onSubmit }) => {
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
-              
             />
             <ErrorMessage name="name" component="div" />
           </LabelStyle>
-          
+
           <LabelStyle htmlFor="number">
             Tel :
             <Field
@@ -58,3 +54,7 @@ export const InputForm = ({ onSubmit }) => {
     </>
   );
 };
+
+ContactForm.propTypes ={
+  onSubmit: PropTypes.func.isRequired,
+}

@@ -1,7 +1,7 @@
 import { Box } from 'components/Box';
 import { ContactItem, ContactText } from './ContactList.styled';
 import PropTypes from 'prop-types';
-import { ButtonForm } from 'components/InputForm/Form.styyled';
+import { ButtonForm } from 'components/ContactForm/ContactForm.styyled';
 
 export const ContactList = ({ contacts, onRemoveClick }) => {
   return (
@@ -12,9 +12,9 @@ export const ContactList = ({ contacts, onRemoveClick }) => {
             <ContactText>{name}: </ContactText>
             <ContactText>{number}</ContactText>
             <ButtonForm type="button" onClick={() => onRemoveClick(id)}>
-               Delete
-              </ButtonForm>
-              </ContactItem>
+              Delete
+            </ButtonForm>
+          </ContactItem>
         </Box>
       ))}
     </ul>
@@ -29,5 +29,5 @@ ContactList.propTypes = {
       number: PropTypes.string.isRequired,
     })
   ),
-  // onRemoveClick: PropTypes.func.isRequired,
+  onRemoveClick: PropTypes.func.isRequired,
 };

@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
 export const InputName = styled.p`
-  
-
   margin-top: ${p => p.theme.space[2]}px;
-  font-size: ${p => p.theme.fontSizes.m};
+  font-size: ${p => p.theme.fontSizes.s};
 `;
 export const InputText = styled.input`
   display: grid;
@@ -15,10 +13,9 @@ export const InputText = styled.input`
   border-radius: ${p => p.theme.radii.none};
   border: ${p => p.theme.borders.normal};
   padding: ${p => p.theme.space[2]}px;
-
   &:hover,
   &:focus {
-    border-color: ${p => p.theme.colors.lightblue};
+    border-color: ${p => p.theme.colors.lightgold};
     color: ${p => p.theme.colors.black};
   }
 `;
