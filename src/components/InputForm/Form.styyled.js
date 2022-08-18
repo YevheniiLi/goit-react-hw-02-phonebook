@@ -1,29 +1,39 @@
-import styled from "styled-components"
-
-
-export const FormStyle = styled.div`
-    display: table-caption;
-    
-`;
+import styled from 'styled-components';
 
 export const ButtonForm = styled.button`
-cursor: pointer;
-padding: ${p => p.theme.space[2]}px;
-  font-size: ${p => p.theme.fontSizes.m};
-  font-weight: ${p => p.theme.fontWeights.heading};
-  border-radius: ${p => p.theme.radii.md};
-  margin-bottom: ${p => p.theme.space[2]}px;
-  background-color: ${p => p.theme.colors.lamp};
-  color: ${p => p.theme.colors.red};
-  border-color: ${p => p.theme.colors.sub};
-  &:hover,
-  &:focus {
-    background-color: ${p => p.theme.colors.purple};
-    color: ${p => p.theme.colors.black}
-  };
-`
+  cursor: pointer;
+  max-width: 120px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 3px 7px;
+  border: 1px solid rgb(173, 173, 173);
+  border-radius: 5px;
+  font-size: 14px;
+  text-transform: capitalize;
+  background-color: rgb(255, 255, 255);
 
-export const FormName = styled.input`
-margin-right: ${p => p.theme.space[4]}px;
-color: ${p => p.theme.colors.yellow};
-`
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+  transition: border-color 1200ms, background-color 1200ms;
+  &:hover {
+    border-color: rgb(118, 194, 197);
+    background-color: ${p => p.theme.colors.sub};
+    box-shadow: 0px 0px 4px 0px rgba(118, 194, 197, 0.7);
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(118, 194, 197, 0.7);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(118, 194, 197, 0.7);
+    transition: border-color 600ms, background-color 600ms, box-shadow 600ms;
+  }
+`;
+
+
+
+export const LabelStyle = styled.label`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  font-weight: 500;
+  padding-top: 20px;
+  
+`;

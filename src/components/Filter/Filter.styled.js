@@ -1,19 +1,24 @@
 import styled from 'styled-components';
 
 export const InputName = styled.p`
-  display: block;
-  margin-bottom: ${p => p.theme.space[2]};
-  margin-top: ${p => p.theme.space[4]}px;
-  font-size: ${p => p.theme.fontSizes.l};
+  
+
+  margin-top: ${p => p.theme.space[2]}px;
+  font-size: ${p => p.theme.fontSizes.m};
 `;
 export const InputText = styled.input`
-  font-size: ${p => p.theme.fontSizes.xl};
+  display: grid;
+  font-size: ${p => p.theme.fontSizes.s};
+  font-weight: ${p => p.theme.fontWeights.normal};
+  margin-top: ${p => p.theme.space[2]}px;
   margin-bottom: ${p => p.theme.space[4]}px;
-  border-radius: ${p => p.theme.radii.md};
-  border: ${p => p.theme.borders.large};
+  border-radius: ${p => p.theme.radii.none};
+  border: ${p => p.theme.borders.normal};
   padding: ${p => p.theme.space[2]}px;
+
   &:hover,
   &:focus {
-    border-color: ${p => p.theme.colors.secondary};
+    border-color: ${p => p.theme.colors.lightblue};
+    color: ${p => p.theme.colors.black};
   }
 `;

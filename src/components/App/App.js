@@ -7,44 +7,47 @@ import { Filter } from '../Filter/Filter';
 // import { Box } from '../Box';
 import { Phonebook } from './App.styled';
 
-
-
 export class App extends Component {
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ],
+    contacts: [{id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
+    {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
+    {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
+    {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
+],
     filter: '',
   };
-
-  addNewContact = ({ name, number }) => {
-    const contact = {
+  addNewContact = (values, actions) => {
+    const newContact = {
       id: nanoid(),
-      name,
-      number,
+      name: values.name,
+      number: values.number,
     };
-
-    if (this.state.contacts.find(contact => contact.name === name)) {
-      return alert(`${name} is already in contacts`);
+    if (
+      this.state.contacts
+        .map(contact => {
+          return contact.name;
+        })
+        .includes(newContact.name)
+    ) {
+      alert(`${newContact.name} is already in contacts!`);
+    } else {
+      this.setState(prevState => {
+        return { contacts: [...prevState.contacts, newContact] };
+      });
+      actions.resetForm();
     }
-
-    this.setState(({ contacts }) => ({
-      contacts: [contact, ...contacts],
-    }));
-  };
-
-  deleteContact = contactId => {
-    this.setState(prevState => ({
-      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
-    }));
   };
 
   changeFilter = e => {
-    this.setState({ filter: e.currentTarget.value });
+    this.setState({ filter: e.target.value });
   };
+
+  
+  deleteContact = ( contactId ) => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+    }))
+  }
 
   render() {
     const { contacts, filter } = this.state;
@@ -54,12 +57,11 @@ export class App extends Component {
     );
 
     return (
-      <Phonebook >
+      <Phonebook>
         <h1>Phonebook</h1>
-        <InputForm addNewContact={this.addNewContact} />
+        <InputForm value={this.state} onSubmit={this.addNewContact} />
         <h2>Contacts</h2>
-        <Filter value={filter} 
-          onChange={this.changeFilter} />
+        <Filter value={filter} onChange={this.changeFilter} />
         <ContactList
           contacts={visibleContacts}
           onRemoveClick={this.deleteContact}
