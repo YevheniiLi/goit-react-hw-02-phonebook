@@ -1,7 +1,6 @@
 import { ButtonForm, LabelStyle } from './ContactForm.styyled';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-
 import PropTypes from 'prop-types';
 
 
